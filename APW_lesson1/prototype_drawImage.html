@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype drawImage</title>
+</head>
+<body>
+	<canvas id="mypicasso" width="500" height="500"></canvas>
+	
+	<script>
+		var cv = document.getElementById("mypicasso");
+		var ctx = cv.getContext("2d");
+
+		var screamImg = new Image();// <img  />
+		screamImg.src = "scream.jpg";//<img src="scream.jp" />
+
+		screamImg.onload = function(){
+			ctx.drawImage( screamImg, 50, 50 );
+			ctx.drawImage( screamImg, 300, 50, 70, 70 );
+			ctx.drawImage( screamImg, 80, 110, 70, 70, 300, 150, 70, 70 );
+		}
+
+	</script>
+</body>
+</html>

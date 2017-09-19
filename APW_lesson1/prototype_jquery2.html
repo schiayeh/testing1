@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Prototype Jquery 1</title>
+	<script src="jquery-3.2.1.min.js"></script>
+	<style>
+		#box { width:50px; 
+			   height:50px; 
+			   background-color:#ccc;
+			   position:absolute;
+			   -webkit-transition: all 2s; 
+    		   transition: all 2s;
+    		   cursor:crosshair;
+			 }
+		#box.redbox { background-color:red; 
+				  width:80px;height:80px; }
+	</style>
+	<script>
+		//var cy = "18";
+		/*
+		var initKaren = function(){
+
+		}
+
+		var $ = jQuery = function( object ){
+
+		}*/
+		//key:value pair
+		// { } = OBJECT
+		var boxPos = {x:0, y:0};
+		var dir = 1;
+
+		$(document).ready( function(){
+			//alert('h333lloo');
+			//var box = document.getElementById("box")
+			// box.addEventListener("click", doSomething)
+			
+			$("#box").click(doSomething);
+			$("#box").mouseover(changeBoxColor);
+			$("#box").mouseout(resetBoxColor);
+
+
+			//$("body")
+		});
+		function resetBoxColor(){
+			$("#box").removeClass("redbox");
+		}
+		function changeBoxColor(){
+			console.log("hello");
+			$("#box").addClass("redbox");
+
+			//$("#box").css("background-color", "#ff0000");	
+		}
+
+		function doSomething(karen){
+			//console.log(karen.pageX)
+			boxPos.x += (5*dir);
+			/*
+				if( condition ) {
+					//statements	
+				}
+			*/
+			/*
+				Notes:
+			*/
+			if( boxPos.x >= 50 ){
+				dir = -1;
+			}
+
+			if( boxPos.x <= 0){
+				dir = 1;
+			}
+
+
+			//boxPos = boxPos + 5;
+			console.log(boxPos.x);
+			$("#box").css("left", boxPos.x+"px");
+
+		}
+
+		function initKaren(){
+			alert('hello');
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div id="box"></div>
+</body>
+
+
+</html>

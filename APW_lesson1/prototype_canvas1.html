@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prototype Canvas 1</title>
+	<style>
+		body {margin:0;padding:0;	}
+	</style>
+</head>
+<body>
+	<canvas id="mypicasso" width="500" height="400"></canvas>
+
+	<script>
+		var cv = document.getElementById("mypicasso");
+		//context
+		var ctx = cv.getContext("2d");
+
+		ctx.strokeStyle = "#ff0000";//color
+		ctx.lineWidth = 10;//thickness
+		ctx.moveTo(100,100);
+		ctx.lineTo(200,100);
+		ctx.lineTo(200,200);
+		ctx.lineTo(100,200);
+		ctx.lineTo(100,100);
+		ctx.stroke();
+
+		//ctx.clearRect(x, y, width, height);
+		//ctx.clearRect(0, 0, 500, 400);//clearRect - CLEAR THE CANVAS
+
+		ctx.lineWidth = 5;//thickness
+		ctx.beginPath();//terminate previous drawing item
+		ctx.arc(400,200,40,0,2*Math.PI);
+		ctx.stroke();
+
+
+
+	</script>
+
+</body>
+</html>
